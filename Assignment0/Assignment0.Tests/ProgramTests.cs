@@ -88,7 +88,7 @@ namespace Assignment0.Tests
             
             // Assert
             // The year is not actually written, so we only test the input message and output message
-            Assert.Equal("Please input a year to check:\nyay", output);
+            Assert.Equal($"Please input a year to check:{Environment.NewLine}yay", output);
         }
         
         [Fact]
@@ -97,12 +97,12 @@ namespace Assignment0.Tests
             // Arrange
             _console.Message = "1581";
             // Act and assert
-            Assert.Equal("Please input a year to check:\nYear too low", GetConsoleOutput(() => _program.Main()));
+            Assert.Equal($"Please input a year to check:{Environment.NewLine}Year too low", GetConsoleOutput(() => _program.Main()));
 
             // Arrange
             _console.Message = "Not an int";
             // Act and assert
-            Assert.Equal("Please input a year to check:\nThat year is not a number", GetConsoleOutput(() => _program.Main()));
+            Assert.Equal($"Please input a year to check:{Environment.NewLine}That year is not a number", GetConsoleOutput(() => _program.Main()));
          }
     }
     
