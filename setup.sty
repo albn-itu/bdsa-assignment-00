@@ -1,0 +1,73 @@
+% --- Characters and fonts ---
+\usepackage[utf8]{inputenc} % Character encoding
+\usepackage[T1]{fontenc} % Font encoding
+\usepackage{mathptmx} % Use Times Font
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+\usepackage{pdfpages} %Used to import pdf in Appendices.
+
+
+% --- Language ---
+\usepackage[english]{babel} % System translation
+\usepackage{datetime}
+
+
+% Page setup
+\setlength{\parindent}{0em} % Paragraph indent
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+\usepackage[all]{nowidow} % Tries to remove widows
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}   % Ruler
+
+
+% --- Frontmatter ---
+\usepackage{calc} % To reset the counter in the document after title page
+
+% --- Chapter formatting ---
+\usepackage{titlesec}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0em}{\huge}
+\titlespacing{\chapter}{0mm}{0em}{1em}
+
+% --- Links ---
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\hypersetup{ 	
+    pdfsubject = {Eksamens opgave - SYSDAB},
+    pdftitle = {Eksamens opgave i Systematisk Design af Brugergrænseflader forår 2021},
+    pdfauthor = {Albert Rise Nielsen, Christian Emil Stender, Karl Bilsted Michelsen, Peter Bruhn Nielsen}
+}
+
+
+% --- Images ---
+\usepackage{graphicx} % Required for including pictures
+\usepackage{float} % Positioning of figures
+\usepackage{pdfpages} % Insert pdfs into document
+
+% --- Tikz ---
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+% Flowchart tikz
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+% --- Appendices ---
+\usepackage[toc, titletoc]{appendix}
+
+
+% --- Bibliography and references ---
+\usepackage{csquotes}
+\usepackage[backend=biber,datamodel=interview]{biblatex} % source tool
+\addbibresource{bibliography.bib}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+% Other
+\usepackage{enumitem} % Includes lists
+\usepackage{booktabs} % Beautiful tables
