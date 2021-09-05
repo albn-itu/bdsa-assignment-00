@@ -5,6 +5,15 @@ namespace Assignment0.Tests
     // TODO: Apart from the leap year tests, these are really bad. There are no edge cases, or error checking
     public class LeapYearCheckerTests
     {
+        
+        [Fact]
+        public void IsLeapYear_low_year_throws_error()
+        {
+            // Act and assert
+            Assert.Throws<InvalidYearException>(() => LeapYearChecker.IsLeapYear(1581));
+            Assert.Throws<InvalidYearException>(() => LeapYearChecker.IsLeapYear(860));
+        }
+        
         [Fact]
         public void IsLeapYear_every_leap_year_first_half_21st_century()
         {

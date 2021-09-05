@@ -1,11 +1,19 @@
 
 // TODO: This is so over engineered it's not even funny
+
+using System;
+
 namespace Assignment0
 {
     public class LeapYearChecker
     {
         public static bool IsLeapYear(int year)
         {
+            if (year <= 1582)
+            {
+                throw new InvalidYearException("Year too low");
+            }
+            
             if (!DividesBy4(year))
             {
                 return false;
@@ -43,6 +51,17 @@ namespace Assignment0
         {
             return DividesBy(400, number);
         }
+    }
+    
+    
+    public class InvalidYearException : Exception
+    {
+        public InvalidYearException()
+        {
+        }
 
+        public InvalidYearException(string message) : base(message)
+        {
+        }
     }
 }
