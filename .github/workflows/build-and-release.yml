@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: dotnet publish -o {{ matrix.build_dir }}
+      run: dotnet publish -o ${{ matrix.build_dir }}
     - name: Zip output directory
       uses: thedoctor0/zip-release@master 
       with:
