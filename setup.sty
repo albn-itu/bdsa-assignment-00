@@ -7,8 +7,9 @@
 
 
 % --- Language ---
-\usepackage[danish]{babel} % System translation
-\usepackage[figurename=Bilag]{caption} % Changes figure caption to "Bilag #: "
+\usepackage[english]{babel} % System translation
+\usepackage{datetime}
+
 
 % Page setup
 \setlength{\parindent}{0em} % Paragraph indent
@@ -20,12 +21,14 @@
 
 
 % --- Frontmatter ---
-\newcommand{\frontmatter}{
-    \pagenumbering{roman}   % Setting page numbering to lower-case roman
-}
 \usepackage{calc} % To reset the counter in the document after title page
-% Insert any translations of lists here
 
+% --- Chapter formatting ---
+\usepackage{titlesec}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0em}{\huge}
+\titlespacing{\chapter}{0mm}{0em}{1em}
 
 % --- Links ---
 \usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
