@@ -1,0 +1,23 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup git repo
+        uses: actions/checkout@v2
+      - name: Compile latex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+      - name: Upload pdf to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: main.pdf
+          asset_name: main.pdf
+          tag: ${{ github.ref }} 
